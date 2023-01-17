@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class LoginComponent {
 
+
+getLoginData(form:any){
+console.log(form.value)
+}
+
 }

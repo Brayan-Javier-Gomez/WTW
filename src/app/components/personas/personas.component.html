@@ -1,12 +1,66 @@
-<form #gfgform = "ngForm" (ngSubmit)="onClickSubmit(gfgform)" class="form">
-    <br>
-    <br>
-    <label class="text-left ml-3">Identificador</label> <input type="text" name = 'Identificador' ngModel class="border-4 my-2">
-    <label class="text-left ml-3">Nombres</label> <input type="text" name = 'Nombres' ngModel class="border-4 my-2">
-    <label class="text-left ml-3">Apellidos</label><input type="text" name = 'Apellidos' ngModel class="border-4 my-2">
-    <label class="text-left ml-3">Numero de identificacion</label> <input type="text" name = 'Numero_identificacion' ngModel class="border-4 my-2">
-    <label class="text-left ml-3">Correo</label> <input type="text" name = 'Email' ngModel class="border-4 my-2">
-    <label class="text-left ml-3">Tipo de identificador</label> <input type="text" name = 'Tipo_identificacion' ngModel class="border-4 my-2">
-    <label class="text-left ml-3">Fecha de creacion</label> <input type="date" name = 'Fecha_de_creacion' ngModel class="border-4 my-2">
-    <button type="submit" class="border-4 p-3 m-3 bg-blue-200 font-bold">Guardar</button>
-  </form>
+<form #gfgform="ngForm" (ngSubmit)="onClickSubmit(gfgform)" class="form">
+  <br />
+  <br />
+  <label class="text-left ml-3">Identificador</label>
+  <input type="text" name="Identificador" ngModel class="border-4 my-2" />
+  <label class="text-left ml-3">Nombres</label>
+  <input type="text" name="nombres" ngModel class="border-4 my-2" />
+  <label class="text-left ml-3">Apellidos</label
+  ><input type="text" name="apellidos" ngModel class="border-4 my-2" />
+  <label class="text-left ml-3">Nombres Completos</label>
+  <input
+    type="text"
+    name="nombres_completos"
+    ngModel
+    class="border-4 my-2"
+    disabled
+    value="{{
+      gfgform.value.nombres + ' ' + gfgform.value.apellidos | titlecase
+    }}"
+  />
+  <label class="text-left ml-3">Tipo de identificador</label>
+  <select name="tipo_identificacion" id="" class="border-4 p-2" ngModel>
+    <option value="cc">C.C</option>
+    <option value="ti">T.I</option>
+  </select>
+  <label class="text-left ml-3">Numero de identificacion</label>
+  <input
+    type="text"
+    name="Numero_identificacion"
+    ngModel
+    class="border-4 my-2"
+  />
+  <label class="text-left ml-3">Identificacion:</label>
+  <input
+    type="text"
+    name="identificacion"
+    ngModel
+    class="border-4 my-2"
+    disabled
+    value="{{
+      gfgform.value.tipo_identificacion +
+        '.' +
+        gfgform.value.Numero_identificacion | uppercase
+    }}"
+  />
+  <label class="text-left ml-3">Correo</label>
+  <input type="email" name="Email" ngModel class="border-4 my-2" />
+
+  <label class="text-left ml-3">Fecha de creacion</label>
+  <input type="date" name="Fecha_de_creacion" ngModel class="border-4 my-2" />
+
+  <label class="text-left ml-3">Nombres Completos</label>
+  <input
+    type="text"
+    name="nombres_completos"
+    ngModel
+    class="border-4 my-2"
+    disabled
+    value="{{
+      gfgform.value.nombres + ' ' + gfgform.value.apellidos | titlecase
+    }}"
+  />
+  <button type="submit" class="border-4 p-3 m-3 bg-blue-200 font-bold">
+    Guardar
+  </button>
+</form>

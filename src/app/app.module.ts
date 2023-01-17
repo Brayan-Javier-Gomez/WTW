@@ -8,6 +8,7 @@ import { LoginComponent } from './components/login/login.component';
 import {FormsModule} from '@angular/forms'
 import {HttpClientModule} from "@angular/common/http";
 import { HeaderComponent } from './components/shared/header/header.component'
+import { AppRoutingModule } from './app.routing';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { HeaderComponent } from './components/shared/header/header.component'
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
